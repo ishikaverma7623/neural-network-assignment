@@ -1,6 +1,6 @@
 # Neural Network Assignment (PyTorch)
 
-## 📌 Overview
+##  Overview
 This project implements Artificial Neural Networks (ANN) using PyTorch for two tasks:
 - Regression
 - Classification
