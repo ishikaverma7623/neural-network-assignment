@@ -1,91 +1,83 @@
 # Neural Network Assignment (PyTorch)
 
-##  Overview
-This project implements Artificial Neural Networks (ANN) using PyTorch for two tasks:
-- Regression
-- Classification
+## Overview
 
-The objective is to understand model training, evaluation, and the impact of hyperparameters.
+This project implements Artificial Neural Networks (ANN) using PyTorch for:
 
----
-
-##  Datasets
-
-### 1. Regression
-- Dataset: California Housing Dataset
-- Task: Predict house prices based on input features
-
-### 2. Classification
-- Dataset: Breast Cancer Wisconsin Dataset
-- Task: Classify tumors as malignant or benign
+* Regression Task
+* Classification Task
 
 ---
 
-##  Preprocessing Steps
-- Feature scaling using StandardScaler
-- Train-Test Split (80% training, 20% testing)
-- Conversion to PyTorch tensors
+## Datasets
+
+* California Housing Dataset (Regression)
+* Breast Cancer Wisconsin Dataset (Classification)
 
 ---
 
-##  Model Architecture
-Both models use a simple Artificial Neural Network:
+## Preprocessing
 
-- Input Layer
-- Hidden Layer 1 → 64 neurons (ReLU)
-- Hidden Layer 2 → 32 neurons (ReLU)
-- Output Layer
-  - Regression → 1 neuron
-  - Classification → 1 neuron (Sigmoid applied during evaluation)
+* Feature scaling using StandardScaler
+* Train-test split (80-20)
 
 ---
 
-##  Training Details
+## Model Architecture
 
-| Task           | Loss Function        | Optimizer |
-|----------------|--------------------|----------|
-| Regression     | MSELoss             | Adam     |
-| Classification | BCEWithLogitsLoss   | Adam     |
+* Input Layer
+* Hidden Layer 1 (64 neurons, ReLU)
+* Hidden Layer 2 (32 neurons, ReLU)
+* Output Layer
 
 ---
 
-##  Hyperparameter Experiment
+## Training Details
 
-Learning Rate Comparison:
+* Optimizer: Adam
+* Regression Loss: MSELoss
+* Classification Loss: BCEWithLogitsLoss
+
+---
+
+## Hyperparameter Experiment
 
 | Learning Rate | Regression Loss | Classification Accuracy |
-|--------------|----------------|-------------------------|
-| 0.01         | Lower (~0.39)  | ~93%                    |
-| 0.001        | Higher (~0.60) | ~96%                    |
+| ------------- | --------------- | ----------------------- |
+| 0.01          | ~0.39           | ~93%                    |
+| 0.001         | ~0.60           | ~96%                    |
 
 ---
 
-##  Results
+## Results
 
-### Regression Output
-- Model successfully reduced loss over epochs
-- Final test loss demonstrates learning capability
-
-### Classification Output
-- Achieved high accuracy (~96%)
-- Model effectively distinguishes between classes
+* Regression model successfully minimized loss over epochs
+* Classification model achieved high accuracy (~96%)
 
 ---
 
-##  Graphs
+## Graphs
 
-### Regression Training Loss
+### Regression
+
 ![Regression](regression.png)
 
-### Classification Training Loss
+### Classification
+
 ![Classification](classification.png)
 
 ---
 
-##  Conclusion
-- Lower learning rate improves stability but slows convergence
-- ANN models perform well for both regression and classification tasks
-- Proper preprocessing significantly improves results
+## Conclusion
+
+Lower learning rate improves stability but slows convergence.
+ANN performs well for both regression and classification tasks.
 
 ---
 
+## How to Run
+
+pip install torch pandas scikit-learn matplotlib
+
+python regression.py
+python classification.py
